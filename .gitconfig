@@ -1,13 +1,14 @@
 # This is Git's per-user configuration file.
 [core]
-	editor = subl -n -w
-	excludesfile = ~/.gitignore_global
+	editor = vim
+	pager = diff-so-fancy | less --tabs=4 -RFX
+	excludesfile = ~/.gitignore
 [push]
 	default = simple
 [user]
-	name = Edouard Oger
-	email = eoger@fastmail.com
-	signingkey = A2F740742307674A
+	name = Bernardo Rittmeyer
+	email = bernardo@rittme.com
+[alias]
 [alias]
 	co = checkout
 	cm = !git add -A && git commit -m
@@ -16,7 +17,7 @@
 	sw = show
 	last = log -1 HEAD
 	unstage = reset HEAD --
-	hgp = !git format-patch -k -p -U8 -1 HEAD --stdout | git-patch-to-hg-patch > $(git symbolic-ref --short HEAD).patch
+	hgp = !git format-patch -k -p --patience -U8 -1 HEAD --stdout | git-patch-to-hg-patch > $(git symbolic-ref --short HEAD).patch
 	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
 	rb = "!f() { git rebase -i "$1"~; }; f"
 	rbc = !git add -A && git rebase --continue
@@ -24,8 +25,23 @@
 	rbs = rebase --skip
 	df = diff
 	dc = diff --cached
-	pr = "!f() { git fetch -fu ${2:-$(git remote |grep ^upstream || echo origin)} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
-[pull]
-	ff = only
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustexitcode = true
+[merge]
+	tool = Kaleidoscope
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+	keepBackup = false
 [credential]
 	helper = osxkeychain
+[diff]
+    tool = Kaleidoscope

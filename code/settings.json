@@ -1,0 +1,39 @@
+{
+  "workbench.startupEditor": "newUntitledFile",
+  "gitlens.advanced.messages": {
+    "suppressFileNotUnderSourceControlWarning": true,
+    "suppressShowKeyBindingsNotice": true,
+    "suppressWelcomeNotice": true
+  },
+  "workbench.iconTheme": "vscode-icons",
+  "files.exclude": {
+    "**/._*": true,
+    "**/node_modules": false
+  },
+  "editor.fontSize": 14,
+  "editor.tabSize": 2,
+  "editor.rulers": [80, 100],
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "editor.renderWhitespace": "all",
+  "trailing-spaces.trimOnSave": true,
+  "trailing-spaces.deleteModifiedLinesOnly": true,
+  "workbench.colorTheme": "One Dark Pro",
+  "sublimeTextKeymap.promptV3Features": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.snippetSuggestions": "top",
+  "editor.formatOnPaste": false,
+  "gitlens.keymap": "alternate",
+  "gitlens.historyExplorer.enabled": true,
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "editor.formatOnSave": true,
+  "prettier.singleQuote": true,
+  "vsicons.projectDetection.disableDetect": true,
+  "gitlens.views.fileHistory.enabled": true,
+  "gitlens.views.lineHistory.enabled": true
+}
