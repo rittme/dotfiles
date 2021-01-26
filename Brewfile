@@ -13,6 +13,7 @@ brew android-platform-tools
 brew ipfs
 brew sqlite
 brew yarn
+brew volta
 
 tap caskroom/versions
 tap caskroom/fonts
