@@ -35,7 +35,13 @@ zstyle ':prezto:load' pmodule \
   'prompt' \
   'autosuggestions' \
   'git' \
-  'node'
+  'homebrew' \
+  'osx' \
+  'gpg' \
+  'syntax-highlighting' \
+  'history-substring-search' \
+  'prompt'
+#  'node'
 
 #
 # Autosuggestions
