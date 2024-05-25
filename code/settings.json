@@ -1,39 +1,123 @@
 {
-  "workbench.startupEditor": "newUntitledFile",
-  "gitlens.advanced.messages": {
-    "suppressFileNotUnderSourceControlWarning": true,
-    "suppressShowKeyBindingsNotice": true,
-    "suppressWelcomeNotice": true
-  },
-  "workbench.iconTheme": "vscode-icons",
-  "files.exclude": {
-    "**/._*": true,
-    "**/node_modules": false
-  },
-  "editor.fontSize": 14,
+  "window.restoreWindows": "all",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "liveshare.featureSet": "insiders",
   "editor.tabSize": 2,
-  "editor.rulers": [80, 100],
+  "jest.autoEnable": true,
+  "jest.coverageFormatter": "GutterFormatter",
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
-  "editor.renderWhitespace": "all",
-  "trailing-spaces.trimOnSave": true,
-  "trailing-spaces.deleteModifiedLinesOnly": true,
-  "workbench.colorTheme": "One Dark Pro",
-  "sublimeTextKeymap.promptV3Features": true,
-  "editor.multiCursorModifier": "ctrlCmd",
-  "editor.snippetSuggestions": "top",
-  "editor.formatOnPaste": false,
-  "gitlens.keymap": "alternate",
-  "gitlens.historyExplorer.enabled": true,
-  "[javascript]": {
-    "editor.formatOnSave": true
+  "editor.fontSize": 14,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          //following will be in italics (=Pacifico)
+          "comment",
+          "entity.name.type.class", //class names
+          "keyword", //import, export, return…
+          //"support.class.builtin.js", //String, Number, Boolean…, this, super
+          "storage.modifier", //static keyword
+          "storage.type.class.js", //class keyword
+          "storage.type.function.js", // function keyword
+          "storage.type.js", // Variable declarations
+          "keyword.control.import.js", // Imports
+          "keyword.control.from.js", // From-Keyword
+          //"entity.name.type.js", // new … Expression
+          "keyword.control.flow.js", // await
+          "keyword.control.conditional.js", // if
+          "keyword.control.loop.js", // for
+          "keyword.operator.new.js" // new
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          //following will be excluded from italics (My theme (Monokai dark) has some defaults I don't want to be in italics)
+          "invalid",
+          "keyword.operator",
+          "constant.numeric.css",
+          "keyword.other.unit.px.css",
+          "constant.numeric.decimal.js",
+          "constant.numeric.json",
+          "entity.name.type.class.js"
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
   },
+  "search.exclude": {
+    "**/.docusaurus": true,
+    "**/build": true,
+    "**/coverage": true,
+    "**/dist": true
+  },
+  "files.exclude": {
+    "**/.nyc_output": true,
+    "**/tsconfig.tsbuildinfo": true,
+    "**/yarn-error.log": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
+  "workbench.colorTheme": "One Monokai",
+  "gitlens.blame.ignoreWhitespace": true,
+  "gitlens.insiders": true,
+  "explorer.confirmDragAndDrop": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "solidity.linter": "solium",
+  "prettier.singleQuote": true,
+  "prettier.packageManager": "yarn",
+  "editor.formatOnSaveMode": "modifications",
   "[typescript]": {
-    "editor.formatOnSave": true
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "go.lintTool": "golangci-lint",
+  "liveshare.authenticationProvider": "GitHub",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
   },
   "editor.formatOnSave": true,
-  "prettier.singleQuote": true,
-  "vsicons.projectDetection.disableDetect": true,
-  "gitlens.views.fileHistory.enabled": true,
-  "gitlens.views.lineHistory.enabled": true
+  "editor.minimap.enabled": false,
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "C_Cpp.intelliSenseMemoryLimit": 2048,
+  "C_Cpp.intelliSenseCacheSize": 1024,
+  "redhat.telemetry.enabled": false,
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "testExplorer.addToEditorContextMenu": true,
+  "testExplorer.showOnRun": true,
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "svg.preview.mode": "svg",
+  "editor.fontWeight": "400",
+  //"go.useLanguageServer": true
 }
