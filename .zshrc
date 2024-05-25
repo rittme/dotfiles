@@ -88,3 +88,8 @@ alias gch='git checkout'
 alias dc=docker-compose
 alias gup='git checkout master; git pull'
 alias gcb='git checkout -b'
+
+# pnpm
+export PNPM_HOME="/Users/bernardo/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

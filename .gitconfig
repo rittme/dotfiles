@@ -9,7 +9,6 @@
 	name = Bernardo Rittmeyer
 	email = bernardo@rittme.com
 [alias]
-[alias]
 	co = checkout
 	cm = !git add -A && git commit -m
 	amend = !git add -A && git commit --amend --no-edit
@@ -29,19 +28,18 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustexitcode = true
-[merge]
-	tool = Kaleidoscope
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[difftool]
-	prompt = false
-[mergetool]
-	prompt = false
-	keepBackup = false
 [credential]
 	helper = osxkeychain
+[pull]
+	rebase = true
+[init]
+	defaultBranch = master
 [diff]
-    tool = Kaleidoscope
+  tool = vscode
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+  tool = vscode
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
+	keepBackup = false
